@@ -1,0 +1,11 @@
+#!/bin/bash
+. /apps/initd/input.rsp
+# how sed work
+HEAD=`echo $head | sed s/O6/P6/`
+FOOT=`echo $footer | sed s/8R/9R/`
+BODY=`echo $body | sed s/55/65/`
+TMPFILE=/tmp/$$.duo
+DUOFILE=/etc/duo/login_duo.conf
+cp $DUOFILE $TMPFILE
+# how to replace multiple paterns
+sed -e "s/KKKKKKK/$HEAD/ ; s/SSSSSSS/$FOOT/ ; s/XXXXXXX/$BODY/" $TMPFILE > $DUOFILE
