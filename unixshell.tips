@@ -1,0 +1,23 @@
+Parameter checks
+
+if [ $# -ne 3 ] ; then
+   echo "Usage: $0 IP3 IP4 SUBNET"
+   echo "   $0 172.30.21 118 28"
+fi
+
+IF statement
+if [ $SUBNET -eq 28 ] ; then
+  max_i=16
+fi
+
+Add two numbers
+  total=$(($num1 + $num2))
+
+Increase by 1
+  i=$(($i+1))
+
+While Loop
+while [ condition ]
+do
+  commands
+done
